@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Nova is an independent architecture and design studio creating considered environments for living, working and gathering." />
+    <title>{% block title %}Nova Architects{% endblock %}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{% static 'css/home.css' %}" />
+  </head>
+  <body>
+    <header class="site-header" id="top">
+      <a class="wordmark" href="{% url 'home' %}" aria-label="Nova Architects home"><span>ARCHITECTS</span></a>
+      <nav class="desktop-nav" aria-label="Primary navigation">
+        <a href="{% url 'about' %}">About</a><a href="{% url 'services' %}">Services</a><a href="{% url 'projects' %}">Projects</a><a href="{% url 'team' %}">Team</a><a href="{% url 'contact' %}">Contact</a>
+      </nav>
+      <div class="header-actions">
+        <a class="whatsapp" href="https://wa.me/910000000000"><img src="{% static 'images/apple.png' %}" alt="Company Logo"></a><a class="admin" href="/admin/">Continue as Admin <span>↗</span></a>
+      </div>
+      <button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false"><i></i><i></i></button>
+    </header>
+    <nav class="mobile-nav" aria-hidden="true" aria-label="Mobile navigation">
+      <a href="{% url 'about' %}">About Us</a><a href="{% url 'services' %}">Services</a><a href="{% url 'projects' %}">Projects</a><a href="{% url 'team' %}">Team</a><a href="{% url 'contact' %}">Contact Us</a>
+    </nav>
+    <main class="inner-page">
+      {% block content %}{% endblock %}
+    </main>
+    <footer class="footer">
+      <div><a class="wordmark" href="{% url 'home' %}"><span>NOVA</span> / ARCHITECTS</a><p>Architecture for the way<br />you want to live.</p></div>
+      <div class="footer-column"><span>Explore</span><a href="{% url 'about' %}">About</a><a href="{% url 'projects' %}">Projects</a><a href="{% url 'services' %}">Services</a><a href="{% url 'team' %}">Team</a></div>
+      <div class="footer-column"><span>Connect</span><a href="mailto:studio@novaarchitects.in">studio@novaarchitects.in</a><a href="tel:+910000000000">+91 00000 00000</a><p>Gurgaon · New Delhi<br />India</p></div>
+      <div class="footer-column"><span>Social</span><a href="#">Instagram ↗</a><a href="#">LinkedIn ↗</a><a href="#">Pinterest ↗</a></div>
+      <div class="footer-bottom"><span>© 2026 Nova Architects. All rights reserved.</span><span><a href="#">Privacy</a> <a href="#">Terms</a></span></div>
+    </footer>
+    <script src="{% static 'js/home.js' %}"></script>
+  </body>
+</html>
